@@ -5,90 +5,34 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('DevHub Shop'),
-        backgroundColor: Color.fromARGB(255, 34, 1, 255),
-      ),
-      drawer: const NavigationDrawer(),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    Drawer(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [buildHeader(), buildMenuItems()],
-        ),
-      ),
-    );
-    Widget buildHeader(BuildContext context) => Container(
-      color: Color.fromARGB(255, 34, 1, 255),
-      padding: EdgeInsets.only(
-        top: 24 + MediaQuery.of(context).padding.top,
-        bottom: 24,
-      ),
-      child: Column(
-        children: const [
-          CircleAvatar(
-            radius: 52,
-            backgroundImage: NetworkImage(
-              'https://pbs.twimg.com/media/ExUgVx7WQAMcTV9.jpg',
+    return Container(
+      color: Colors.white,
+      padding: EdgeInsets.all(25),
+      child: Row(
+        children: [
+          Icon(Icons.sort, size: 30, color: Color.fromARGB(255, 34, 1, 255)),
+          Padding(
+            padding: EdgeInsetsGeometry.only(left: 20),
+            child: Text(
+              "DevHub Shop",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 34, 1, 255),
+              ),
             ),
           ),
-          SizedBox(height: 12),
-          Text(
-            'Rafaell Paiva',
-            style: TextStyle(fontSize: 28, color: Colors.white),
-          ),
-          Text(
-            'rafaell@email.com.br',
-            style: TextStyle(fontSize: 16, color: Colors.white),
-          ),
-        ],
-      ),
-    );
-
-    Widget buildMenuItems(BuildContext context) => Container(
-      padding: const EdgeInsets.all(24),
-      child: Wrap(
-        runSpacing: 16,
-        children: [
-          ListTile(
-            leading: const Icon(Icons.home_outlined),
-            title: const Text('Home'),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.of(context).pushReplacementNamed('/home');
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Inicio'),
-            subtitle: Text('Tela de inicio'),
-            onTap: () {
-              Navigator.of(context).pushReplacementNamed('/home');
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.deck),
-            title: Text('Detail'),
-            subtitle: Text('Detalhes'),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.of(context).pushReplacementNamed('/detail');
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Logout'),
-            subtitle: Text('Finalizar sessão'),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.of(context).pushReplacementNamed('/');
-            },
+          Spacer(),
+          Badge(
+            padding: EdgeInsets.all(7),
+            child: InkWell(
+              onTap: () {},
+              child: Icon(
+                Icons.shopping_bag_outlined,
+                size: 35,
+                color: Color.fromARGB(255, 34, 1, 255),
+              ),
+            ),
           ),
         ],
       ),
