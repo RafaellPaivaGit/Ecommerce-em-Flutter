@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ola_mundo/app_controller.dart';
 import 'package:ola_mundo/cadastro_page.dart';
 import 'package:ola_mundo/detail_page.dart';
+import 'package:ola_mundo/detail_product.dart';
 import 'package:ola_mundo/login_page.dart';
 import 'package:ola_mundo/recuperar_senha.dart';
+import 'package:ola_mundo/detail_product.dart';
 
 import 'home_page.dart';
 
@@ -27,6 +29,7 @@ class AppWidget extends StatelessWidget {
               '/detail': (context) => DetailPage(),
               '/cadastro': (context) => CadastroPage(),
               '/recuperar_senha': (context) => RecuperarSenha(),
+              '/detail_product': (context) => DetailProduct(),
             },
           );
         }

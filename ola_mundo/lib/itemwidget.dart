@@ -44,7 +44,6 @@ class ItemsWidget extends StatelessWidget {
                   ],
                 ),
                 InkWell(
-                  onTap: () {},
                   child: Container(
                     margin: EdgeInsets.all(10),
                     child: Image.asset(
@@ -53,6 +52,11 @@ class ItemsWidget extends StatelessWidget {
                       width: 100,
                     ),
                   ),
+                  onTap: () {
+                    Navigator.of(
+                      context,
+                    ).pushReplacementNamed('/detail_product');
+                  },
                 ),
                 Container(
                   padding: EdgeInsets.only(bottom: 8),
